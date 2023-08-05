@@ -1,0 +1,11 @@
+use('sample_training')
+
+/**
+ * db -> elemnto de bd
+ * zip -> bd a consultar
+ * .find() -> accion  / {llave :valor}
+ */
+db.zips.find({state: "NY"})
+
+//Para contar
+db.zips.find({state: "NY"}).count()
