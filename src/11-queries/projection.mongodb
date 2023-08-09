@@ -1,0 +1,32 @@
+use("store")
+
+//Modo 1
+//regexp
+db.inventory.find({
+  "item.description": {
+    //$regex: "Multiple\\n.*"
+    $regex: /line/
+  }
+}).projection({
+  qty: 1,
+  _id: 0
+}).sort({
+  qty: 1
+});
+
+//Modo 2
+db.inventory.find({
+  "item.description": {
+    //$regex: "Multiple\\n.*"
+    $regex: /line/
+  }
+},
+//projection
+{
+  qty: 1,
+  _id: 0
+}).sort({
+  qty: -1 // 1 desc / asc
+})
+.skip(1)
+.limit(3);

@@ -1,0 +1,13 @@
+//use('simple_airbnb')
+//db.listingsAndReviews.find();
+
+use('platzi_store')
+db.products.find();
+
+db.products.insertOne({
+  name: "product2",
+})
+
+db.products.insertOne({
+  name: "product3",
+})

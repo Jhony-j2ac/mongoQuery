@@ -1,0 +1,14 @@
+use('store')
+
+db.inventory.find({
+  qty: {
+    $eq: 20
+  }
+});
+
+
+db.inventory.find({
+  "item.name": {
+    $eq: "ab"
+  }
+});

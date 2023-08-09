@@ -1,0 +1,9 @@
+use('store')
+
+//regexp
+db.inventory.find({
+  "item.description": {
+    //$regex: "Multiple\\n.*"
+    $regex: /^Multiple\nline/
+  }
+});

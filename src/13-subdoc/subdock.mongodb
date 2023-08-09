@@ -1,0 +1,19 @@
+use("sample_training")
+
+db.trips.find();
+db.companies.find({
+  "relationships.0.person.last_name": "Howell"
+},{
+  name: 1,
+  relationships: 1
+});
+
+db.trips.find();
+db.companies.find({
+  relationships:{
+    $elemMatch:  {"person.last_name": "Howell"}
+  }
+},{
+  name: 1,
+  relationships: 1
+});

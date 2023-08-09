@@ -1,0 +1,13 @@
+use('store')
+//Este sirve en arreglos y en no arreglos
+db.inventory.find({
+  qty: {
+    $nin : [25,20]
+  }
+});
+
+db.inventory.find({
+  tags: {
+    $nin : ["headphone", "appliance"]
+  }
+});

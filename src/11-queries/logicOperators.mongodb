@@ -1,0 +1,65 @@
+use('store');
+
+//And
+db.inventory.find({
+  $and: [
+    {qty: { $gt: 5 }},
+    {qty: { $lt: 30 }}
+  ]
+});
+
+// Nand
+db.inventory.find({
+  $nor: [
+    {qty: {
+      $gt: 5 ,  $lt: 20
+    }}
+  ]
+});
+
+//Not
+db.inventory.find({
+  qty: {
+      $not: {
+        $gt: 5 ,  $lt: 20
+      }
+    }
+});
+
+//Or
+db.inventory.find({
+  $or: [
+   { _id: 1 },
+   { _id: 4}
+  ]
+});
+
+
+
+//Nor
+db.inventory.find({
+  $nor: [
+   { _id: 1 },
+   { _id: 4}
+  ]
+});
+
+
+//mixed
+db.inventory.find({
+  $or: [
+   { _id: 4 },
+   {
+    $and: [
+      {qty: { $gt: 5 }},
+      {qty: { $lt: 20 }}
+    ]
+   }
+  ]
+});
+
+
+
+
+
+//db.inventory.find();

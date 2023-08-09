@@ -1,0 +1,11 @@
+use('store')
+
+//por tamaño del arreglo
+db.inventory.find({
+  tags: {
+    $size: 2
+  }
+});
+
+
+

@@ -1,0 +1,15 @@
+use('store')
+
+//mayor que
+db.inventory.find({
+  qty: {
+    $gt: 15
+  }
+});
+
+//mayor igual que
+db.inventory.find({
+  qty: {
+    $gte: 15
+  }
+});

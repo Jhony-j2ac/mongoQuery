@@ -1,0 +1,7 @@
+use('sample_airbnb')
+// aggregate funcion en forma de pipeline [], [], []... cada proceso alimenta al anterior
+db.listingsAndReviews.aggregate([ //aggregate funciona por capas
+    { $match: {amenities: "Wifi"}   }, //find
+    { $project: { address: 1}}, //project
+    { $group: {_id: "$address.country", count: {$sum:1 } } }
+])

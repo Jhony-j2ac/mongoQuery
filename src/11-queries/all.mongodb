@@ -1,0 +1,8 @@
+use('store')
+
+//Este metodo  trae en arreglos los que tienen ambos elementos
+db.inventory.find({
+  tags: {
+    $all: ["book", "bag"]
+  }
+});
